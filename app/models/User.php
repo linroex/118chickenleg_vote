@@ -56,7 +56,11 @@ class User extends Eloquent{
         if(self::$facebook == null){
             self::construct();
         }
-        return self::where('uid','=',self::getUserId())->first()->contestant_id;
+        try {
+            return self::where('uid','=',self::getUserId())->first()->contestant_id;
+        } catch (Exception $e) {
+            return False;            
+        }
     }
     public static function post_facebook($message, $link){
         if(self::$facebook == null){

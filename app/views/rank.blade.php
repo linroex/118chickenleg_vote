@@ -15,6 +15,9 @@
                             <div class="page-header text-muted">
                                 <h3>人氣歌手排名</h3>
                             </div>
+                            <div class="col-md-12">
+                                <div class="alert" style="display:none"></div>
+                            </div>
                             <table class="table table-hover rank_table">
                                 <thead>
                                     <tr>
@@ -28,17 +31,20 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @for($i=0;$i<12;$i++)
-                                    <tr>
-                                        <td>{{$i+1}}</td>
-                                        <td><a href="{{url('contestant/1')}}">傅姿華</a></td>
-                                        <td>企業管理系</td>
-                                        <td>9</td>
-                                        <td><a href=""><i class="glyphicon glyphicon-headphones"></i></a></td>
-                                        <td><a href=""><i class="glyphicon glyphicon-share"></a></td>
-                                        <td><a href="{{url('contestant/1')}}"><i class="glyphicon glyphicon-info-sign"></a></td>
+                                    <?php $i=0; ?>
+                                    @foreach($data as $contestant)
+                                    <?php $i++; ?>
+                                    <tr id="contestant-{{$contestant->id}}">
+                                        <td>{{$i}}</td>
+                                        <td><a href="{{url('contestant/' . $contestant->id)}}">{{{$contestant->name}}}</a></td>
+                                        <td>{{{$contestant->department}}}</td>
+                                        <td>{{{$contestant->vote_num}}}</td>
+                                        <td><a onclick="play_audio({{$contestant->id}})" class="btn"><i class="glyphicon glyphicon-headphones"></i></a></td>
+                                        <td><a onclick="vote({{$contestant->id}})" style="color:{{User::get_user_voted() == $contestant->id?'red':''}}" class="btn"><i class="glyphicon glyphicon-thumbs-up"></i></a></td>
+                                        <td><a onclick="share({{$contestant->id}})" class="btn"><i class="glyphicon glyphicon-share"></i></a></td>
                                     </tr>
-                                    @endfor
+                                    <audio id="audio-{{$contestant->id}}" preload="metadata" loop src="audio/{{{$contestant->audio_file}}}"></audio>
+                                    @endforeach
                                 </tbody>
                             </table>
                         </div>

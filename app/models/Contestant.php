@@ -12,7 +12,7 @@ class Contestant extends Eloquent{
         return self::all()->sortBy('vote_num')->reverse();
     }
     public static function data($id){
-        return self::find($id)->first();
+        return self::where('id','=',$id)->first();
     }
     public static function increase_votenum($id){
         

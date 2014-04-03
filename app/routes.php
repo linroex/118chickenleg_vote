@@ -11,23 +11,14 @@
 |
 */
 
-Route::get('/', function()
-{
-	return View::make('index');
+Route::get('/','ContestantController@showAllContestant');
+Route::group(array('before'=>'auth'),function(){
+    Route::post('/vote','VoteController@vote');
+    Route::post('/share','ContestantController@share');
 });
-Route::get('/rank', function()
-{
-    return View::make('rank');
-});
-Route::get('/contestant/{id}', function()
-{
-    return View::make('contestant');
-});
+Route::get('/rank', 'ContestantController@showRankPage');
+Route::get('/contestant/{id}','ContestantController@showContestantPage');
 Route::get('/about', function()
 {
     return View::make('about');
-});
-Route::get('/test', function(){
-    
-    var_dump(Contestant::data(1));
 });
