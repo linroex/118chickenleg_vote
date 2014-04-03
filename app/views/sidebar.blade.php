@@ -1,7 +1,11 @@
 <div class="column col-md-3 col-sm-4" id="sidebar">
     <a href="{{url()}}" class="logo">台科大雞腿盃</a>
+    @if(User::is_login())
+        <img src="{{{User::get_user_avatar()}}}" id="login_user_avatar" alt="" class="img-thumbnail">
+    @endif
     <ul class="nav">
-        <li><a href="{{User::get_login_url()}}">登入</a></li>
+
+        <li><a href="{{User::get_login_url()}}">{{User::is_login()?'登入成功':'登入'}}</a></li>
         <li><a href="{{url('about')}}">關於</a></li>
         <li><a href="{{url('rank')}}">排名</a></li>
         <li><a href="{{url()}}">人氣獎</a></li>

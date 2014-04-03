@@ -168,3 +168,7 @@ small.text-muted {
 .padding{
   margin-top:-50px;
 }
+#login_user_avatar{
+  width:100px;
+  margin-left:15px;
+}

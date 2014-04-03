@@ -52,6 +52,14 @@ class User extends Eloquent{
         }
         return self::$facebook->api('/me');
     }
+    public static function get_user_avatar(){
+        // https://graph.facebook.com/linroex/picture?redirect=false&type=large
+        if(self::$facebook == null){
+            self::construct();
+        }
+
+        return self::$facebook->api(self::getUserId() . '/picture','GET',array('redirect'=>false,'type'=>'large'))['data']['url'];
+    }
     public static function get_user_voted(){
         if(self::$facebook == null){
             self::construct();
