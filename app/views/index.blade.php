@@ -36,7 +36,7 @@
                                         <a href="{{url('contestant/' . $contestant->id)}}" class="btn"><i class="glyphicon glyphicon-info-sign"></i></a>
                                     </div>
                                 
-                                    <h4 class="text-center"><a href="{{url('contestant/' . $contestant->id)}}">{{{$contestant->name}}}<small>{{{$contestant->department}}}</small></a></h4>
+                                    <h4 class="text-center"><a href="{{url('contestant/' . $contestant->id)}}">{{{$contestant->name}}} <small>{{{$contestant->department}}}</small></a></h4>
                                     <p class="text-center">目前：<span id="votenum-{{$contestant->id}}">{{{$contestant->vote_num}}}</span>票</p>
                                     <audio id="audio-{{$contestant->id}}" preload="metadata" loop src="audio/{{{$contestant->audio_file}}}"></audio>
                                 </div>
