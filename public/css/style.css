@@ -174,9 +174,7 @@ small.text-muted {
   width:100px;
   margin-left:15px;
 }
-#sidebar{
-  margin-top:50px;
-}
+
 #sidebar img{
   margin-top:20px;
   margin-bottom:20px;
@@ -186,4 +184,7 @@ small.text-muted {
 }
 #sidebar-footer{
   margin-bottom: 50px;
+}
+.sidebar-top{
+  margin-top:50px;
 }
