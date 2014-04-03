@@ -69,14 +69,16 @@ a {
     text-shadow:1px 0 1px #888888;
 }
 #sidebar a.logo {
-  display:block;
+  /*display:block;*/
   padding:3px;
   /*background-color:#fff;*/
   /*color:#777777;*/
   height:40px;
-  width:200px;
+  /*width:200px;*/
+
   margin:15px;
   font-size:26px;
+
   font-weight:700;
   text-align:left;
   text-decoration:none;
@@ -171,4 +173,17 @@ small.text-muted {
 #login_user_avatar{
   width:100px;
   margin-left:15px;
+}
+#sidebar{
+  margin-top:50px;
+}
+#sidebar img{
+  margin-top:20px;
+  margin-bottom:20px;
+}
+#sidebar li a:hover{
+  background: #222;
+}
+#sidebar-footer{
+  margin-bottom: 50px;
 }

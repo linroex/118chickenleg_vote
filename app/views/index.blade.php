@@ -8,11 +8,11 @@
     <div class="wrapper">
         <div class="box">
             @include('sidebar')
-            <div class="column col-md-9 col-sm-8" id="main">
+            <div class="column col-md-9 col-sm-8 col-xs-12" id="main">
                 
                 <div class="padding">
                     <div class="full">
-                        <div class="col-md-9">
+                        <div class="col-md-9 col-sm-12 col-xs-12">
 
                             <div class="page-header text-muted">
                                 <h3>人氣歌手票選</h3>
@@ -24,7 +24,7 @@
                         </div>
                         @foreach ($data as $contestant)
 
-                            <div class="col-md-3" id="contestant-{{$contestant->id}}">
+                            <div class="col-md-3 col-sm-6 col-lg-3" id="contestant-{{$contestant->id}}">
 
                                 <div class="contestant_img well">
                                     <a href="{{url('contestant/' . $contestant->id)}}"><img src="image/{{$contestant->avatar == ''?'no_avatar.jpg':$contestant->avatar}}" alt="" class="img-thumbnail"></a>
