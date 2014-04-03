@@ -1,7 +1,7 @@
 <div class="column col-md-3 col-sm-4" id="sidebar">
     <a href="{{url()}}" class="logo">台科大雞腿盃</a>
     <ul class="nav">
-        <li><a href="{{url('login')}}">登入</a></li>
+        <li><a href="{{User::get_login_url()}}">登入</a></li>
         <li><a href="{{url('about')}}">關於</a></li>
         <li><a href="{{url('rank')}}">排名</a></li>
         <li><a href="{{url()}}">人氣獎</a></li>
