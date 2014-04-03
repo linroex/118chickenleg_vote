@@ -36,9 +36,17 @@ function vote(id){
 
 function share(id){
     $.post(url + '/share',{id:id},function(data){
-        $('.alert').removeClass('alert-danger');
-        $('.alert').text(data);
-        $('.alert').addClass('alert-success');
-        $('.alert').css('display','block');
+        if(data == '請先登入才能進行投票、分享等功能。'){
+            $('.alert').removeClass('alert-success');
+            $('.alert').text(data);
+            $('.alert').addClass('alert-danger');
+            $('.alert').css('display','block');
+        }else{
+            $('.alert').removeClass('alert-danger');
+            $('.alert').text(data);
+            $('.alert').addClass('alert-success');
+            $('.alert').css('display','block');
+        }
+        
     })
 }
