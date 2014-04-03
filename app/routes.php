@@ -27,3 +27,7 @@ Route::get('/about', function()
 {
     return View::make('about');
 });
+Route::get('/test', function(){
+    
+    var_dump(Contestant::data(1));
+});
