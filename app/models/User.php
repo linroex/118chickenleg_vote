@@ -44,7 +44,7 @@ class User extends Eloquent{
             self::construct();
         }
         $scope = array('user_about_me','publish_stream');
-        return (self::$facebook->getLoginUrl(array('scope'=>$scope,'redirect_uri'=>url('/test'))));
+        return (self::$facebook->getLoginUrl(array('scope'=>$scope,'redirect_uri'=>url())));
     }
     public static function get_user_data(){
         if(self::$facebook == null){
