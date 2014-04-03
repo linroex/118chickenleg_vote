@@ -165,6 +165,6 @@ small.text-muted {
 .contestant-tools a:hover{
   color:red;
 }
-.contestant-tools{
-  
+.padding{
+  margin-top:-50px;
 }
