@@ -14,7 +14,7 @@ class ContestantController extends Controller{
     }
     public function showContestantPage($id){
         return View::make('contestant')->with(array(
-            'data'=>Contestant::data($id)
+            'contestant'=>Contestant::data($id)
         ));
     }
     public function showRankPage(){

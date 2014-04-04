@@ -13,19 +13,19 @@
                 <div class="padding">
                     <div class="full">
                         <div class="page-header text-muted">
-                            <h3>{{{$data->name}}}<small>{{{$data->department}}}</small></h3>
+                            <h3>{{{$contestant->name}}}<small>{{{$contestant->department}}}</small></h3>
                         </div>
 
                         <div class="alert" style="display:none"></div>
-                        <div class="col-md-3" id="contestant-{{$data->id}}">
+                        <div class="col-md-3" id="contestant-{{$contestant->id}}">
                             
                             <div class="well">
-                                <img src="{{url('image/' . ($data->avatar == ''?'no_avatar.jpg':$data->avatar))}}" alt="" class="img-thumbnail">
+                                <img src="{{url('image/' . ($contestant->avatar == ''?'no_avatar.jpg':$contestant->avatar))}}" alt="" class="img-thumbnail">
 
                                 <div class="contestant-tools btn-group btn-group-justified">
-                                    <a onclick="play_audio({{$data->id}})" class="btn"><i class="glyphicon glyphicon-headphones"></i></a>
-                                    <a onclick="vote({{$data->id}})" style="color:{{User::get_user_voted() == $data->id?'red':''}}" class="btn"><i class="glyphicon glyphicon-thumbs-up"></i></a>
-                                    <a onclick="share({{$data->id}})" class="btn"><i class="glyphicon glyphicon-share"></i></a>
+                                    <a onclick="play_audio({{$contestant->id}})" class="btn"><i class="glyphicon glyphicon-headphones"></i></a>
+                                    <a onclick="vote({{$contestant->id}})" style="color:{{User::get_user_voted() == $contestant->id?'red':''}}" class="btn"><i class="glyphicon glyphicon-thumbs-up"></i></a>
+                                    <a onclick="share({{$contestant->id}})" class="btn"><i class="glyphicon glyphicon-share"></i></a>
                                 </div>
                             </div>
                             @include('audio')
@@ -35,12 +35,12 @@
                             <table class="table">
                                 <tr>
                                     <td class="col-md-2 col-sm-4">目前票數</td>
-                                    <td><span id="votenum-{{$data->id}}">{{{$data->vote_num}}}</span>票</td>
+                                    <td><span id="votenum-{{$contestant->id}}">{{{$contestant->vote_num}}}</span>票</td>
                                 </tr>
                                 
                                 <tr>
                                     <td>自我介紹</td>
-                                    <td><p>{{{$data->profile}}}</p></td>
+                                    <td><p>{{{$contestant->profile}}}</p></td>
                                 </tr>
                             </table>
                             
