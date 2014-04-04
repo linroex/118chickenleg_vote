@@ -1,4 +1,4 @@
-<div class="column col-md-3 col-sm-4 col-xs-12" id="sidebar">
+<div class="column col-md-3 col-sm-4" id="sidebar">
     <div class="sidebar-top">
         <a href="{{url()}}" class="logo">台科大雞腿盃</a>
         <ul class="nav">
@@ -12,7 +12,7 @@
             <li><a target="_blank" href="https://www.facebook.com/118chickenleg">粉絲頁</a></li>
         </ul>
     </div>
-    <ul class="nav" id="sidebar-footer">
+    <ul class="nav hidden-xs" id="sidebar-footer">
         <h4>主辦單位：<a target="_blank" href="https://www.facebook.com/ntustsg">台科大學生會</a></h4>
         <p>作者：<a target="_blank" href="http://me.coder.tw">林熙哲</a></p>
     </ul>

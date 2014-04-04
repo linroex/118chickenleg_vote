@@ -21,13 +21,13 @@
                             <table class="table table-hover rank_table">
                                 <thead>
                                     <tr>
-                                        <td></td>
+                                        <td class="hidden-xs"></td>
                                         <td>姓名</td>
-                                        <td>科系</td>
+                                        <td class="hidden-xs">歌名</td>
                                         <td>票數</td>
                                         <td></td>
                                         <td></td>
-                                        <td></td>
+                                        <td class="hidden-xs"></td>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -35,15 +35,15 @@
                                     @foreach($data as $contestant)
                                     <?php $i++; ?>
                                     <tr id="contestant-{{$contestant->id}}">
-                                        <td>{{$i}}</td>
+                                        <td class="hidden-xs">{{$i}}</td>
                                         <td><a href="{{url('contestant/' . $contestant->id)}}">{{{$contestant->name}}}</a></td>
-                                        <td>{{{$contestant->department}}}</td>
+                                        <td class="hidden-xs">{{{$contestant->department}}}</td>
                                         <td>{{{$contestant->vote_num}}}</td>
                                         <td><a onclick="play_audio({{$contestant->id}})" class="btn"><i class="glyphicon glyphicon-headphones"></i></a></td>
                                         <td><a onclick="vote({{$contestant->id}})" style="color:{{User::get_user_voted() == $contestant->id?'red':''}}" class="btn"><i class="glyphicon glyphicon-thumbs-up"></i></a></td>
-                                        <td><a onclick="share({{$contestant->id}})" class="btn"><i class="glyphicon glyphicon-share"></i></a></td>
+                                        <td class="hidden-xs"><a onclick="share({{$contestant->id}})" class="btn"><i class="glyphicon glyphicon-share"></i></a></td>
                                     </tr>
-                                    <audio id="audio-{{$contestant->id}}" preload="metadata" loop src="audio/{{{$contestant->audio_file}}}"></audio>
+                                    @include('audio')
                                     @endforeach
                                 </tbody>
                             </table>

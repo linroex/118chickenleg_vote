@@ -8,18 +8,17 @@
     <div class="wrapper">
         <div class="box">
             @include('sidebar')
-            <div class="column col-md-9 col-sm-8 col-xs-12" id="main">
+            <div class="column col-md-9 col-sm-8" id="main">
                 
                 <div class="padding">
                     <div class="full">
                         <div class="col-md-9 col-sm-12 col-xs-12">
-
                             <div class="page-header text-muted">
                                 <h3>人氣歌手票選</h3>
                             </div>
                         </div>
                         <div class="clearfix"></div>
-                        <div class="col-md-12">
+                        <div class="col-md-12 col-xs-12 col-sm-12">
                             <div class="alert" style="display:none"></div>
                         </div>
                         @foreach ($data as $contestant)
@@ -38,7 +37,7 @@
                                 
                                     <h4 class="text-center"><a href="{{url('contestant/' . $contestant->id)}}">{{{$contestant->name}}} <small>{{{$contestant->department}}}</small></a></h4>
                                     <p class="text-center">目前：<span id="votenum-{{$contestant->id}}">{{{$contestant->vote_num}}}</span>票</p>
-                                    <audio id="audio-{{$contestant->id}}" preload="metadata" loop src="audio/{{{$contestant->audio_file}}}"></audio>
+                                    @include('audio')
                                 </div>
                             </div>
                         @endforeach

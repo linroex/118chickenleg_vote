@@ -28,7 +28,7 @@
                                     <a onclick="share({{$data->id}})" class="btn"><i class="glyphicon glyphicon-share"></i></a>
                                 </div>
                             </div>
-                            <audio id="audio-{{$data->id}}" preload="metadata" loop src="{{{url('audio/' . $data->audio_file)}}}"></audio>
+                            @include('audio')
                             
                         </div>                        
                         <div class="col-md-7">
