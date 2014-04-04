@@ -1,6 +1,14 @@
 
 function play_audio(id){
-
+    // $('#contestant-' + id + ' .glyphicon-headphones').css('color','red');
+    // $('#contestant-' + id + ' .well').css('box-shadow','5px 5px 5px #888');
+    // $('#contestant-' + id + ' .tools').css('display','block');
+    // $('#audio-' + id).get(0).play();
+    $('#audio-' + id).bind('ended',function(){
+        $('#contestant-' + id + ' .glyphicon-headphones').css('color','#222222');
+        $('#contestant-' + id + ' .well').css('box-shadow','');
+        $('#contestant-' + id + ' .tools').css('display','');    
+    });
     if($('#audio-' + id).get(0).paused){
         $('#audio-' + id).get(0).play();
         $('#contestant-' + id + ' .glyphicon-headphones').css('color','red');
