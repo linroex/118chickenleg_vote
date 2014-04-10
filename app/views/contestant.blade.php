@@ -40,7 +40,7 @@
                                 
                                 <tr>
                                     <td>自我介紹</td>
-                                    <td><p>{{{$contestant->profile}}}</p></td>
+                                    <td><p>{{$contestant->profile}}</p></td>
                                 </tr>
                             </table>
                             
