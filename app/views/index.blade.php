@@ -23,7 +23,7 @@
                         </div>
                         @foreach ($data as $contestant)
 
-                            <div class="col-md-3 col-sm-6 col-lg-3" id="contestant-{{$contestant->id}}">
+                            <div class="col-md-3 col-sm-6" id="contestant-{{$contestant->id}}">
 
                                 <div class="contestant_img well">
                                     <a href="{{url('contestant/' . $contestant->id)}}"><img src="image/{{$contestant->avatar == ''?'no_avatar.jpg':$contestant->avatar}}" alt="" class="img-thumbnail"></a>
