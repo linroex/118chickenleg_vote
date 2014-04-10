@@ -1,5 +1,6 @@
 <title>台科大雞腿盃｜{{$page_name}}</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta property="og:image" content="{{url('image/logo.jpg')}}" />
 <link rel="stylesheet" href="{{url('css/bootstrap.min.css')}}">
 <link rel="stylesheet" href="{{url('css/style.css')}}">
 <script>
