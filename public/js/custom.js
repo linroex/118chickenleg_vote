@@ -1,10 +1,7 @@
 var play_status = 0;
 var current_playing = "";
 function play_audio(id){
-    // $('#contestant-' + id + ' .glyphicon-headphones').css('color','red');
-    // $('#contestant-' + id + ' .well').css('box-shadow','5px 5px 5px #888');
-    // $('#contestant-' + id + ' .tools').css('display','block');
-    // $('#audio-' + id).get(0).play();
+    var audio = $('#audio-' + id).get(0);
     $('#audio-' + id).bind('ended',function(){
         $('#contestant-' + id + ' .glyphicon-headphones').css('color','#222222');
         $('#contestant-' + id + ' .well').css('box-shadow','');
@@ -12,7 +9,7 @@ function play_audio(id){
         play_status = 0;
         current_playing = "";
     });
-    if(play_status == 1){
+    if(play_status == 1 && audio.paused){
         $('#audio-' + current_playing).get(0).pause();
         $('#contestant-' + current_playing + ' .glyphicon-headphones').css('color','#222222');
         $('#contestant-' + current_playing + ' .well').css('box-shadow','');
@@ -20,15 +17,15 @@ function play_audio(id){
         current_playing = "";
         play_status = 0;
     }
-    if($('#audio-' + id).get(0).paused){
-        $('#audio-' + id).get(0).play();
+    if(audio.paused){
+        audio.play();
         $('#contestant-' + id + ' .glyphicon-headphones').css('color','red');
         $('#contestant-' + id + ' .well').css('box-shadow','5px 5px 5px #888');
         $('#contestant-' + id + ' .tools').css('display','block');
         play_status = 1;
         current_playing = id;
     }else{
-        $('#audio-' + id).get(0).pause();
+        audio.pause();
         $('#contestant-' + id + ' .glyphicon-headphones').css('color','#222222');
         $('#contestant-' + id + ' .well').css('box-shadow','');
         $('#contestant-' + id + ' .tools').css('display','');
