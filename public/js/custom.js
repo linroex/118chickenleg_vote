@@ -14,6 +14,9 @@ function play_audio(id){
     });
     if(play_status == 1){
         $('#audio-' + current_playing).get(0).pause();
+        $('#contestant-' + current_playing + ' .glyphicon-headphones').css('color','#222222');
+        $('#contestant-' + current_playing + ' .well').css('box-shadow','');
+        $('#contestant-' + current_playing + ' .tools').css('display','');   
         current_playing = "";
         play_status = 0;
     }
