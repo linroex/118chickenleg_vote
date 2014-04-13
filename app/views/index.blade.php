@@ -26,6 +26,7 @@
                             <div class="col-md-3 col-sm-6" id="contestant-{{$contestant->id}}">
 
                                 <div class="contestant_img well">
+                                    
                                     <a href="{{url('contestant/' . $contestant->id)}}"><img src="image/{{$contestant->avatar == ''?'no_avatar.jpg':$contestant->avatar}}" alt="" class="img-thumbnail"></a>
 
                                     <div class="tools btn-group btn-group-justified">
@@ -34,7 +35,7 @@
                                         <a onclick="share({{$contestant->id}})" class="btn"><i class="glyphicon glyphicon-share"></i></a>
                                         <a href="{{url('contestant/' . $contestant->id)}}" class="btn"><i class="glyphicon glyphicon-info-sign"></i></a>
                                     </div>
-                                
+                                    
                                     <h4 class="text-center"><a href="{{url('contestant/' . $contestant->id)}}">{{{$contestant->name}}} <small>{{{$contestant->department}}}</small></a></h4>
                                     <p class="text-center">目前：<span id="votenum-{{$contestant->id}}">{{{$contestant->vote_num}}}</span>票</p>
                                     @include('audio')

@@ -147,9 +147,10 @@ small.text-muted {
   margin-top: -40px;
   background: white;
   opacity: 0.8;
+  width:100%;
 }
 .glyphicon{
-  font-size:140%;
+  font-size:130%;
 }
 .tools .btn:hover{
   color:red;
