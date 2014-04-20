@@ -3,6 +3,7 @@
 <meta property="og:image" content="{{url('image/logo.jpg')}}" />
 <link rel="stylesheet" href="{{url('css/bootstrap.min.css')}}">
 <link rel="stylesheet" href="{{url('css/style.css')}}">
+<link rel="image_src" href="{{url('image/logo.jpg')}}"/>
 <script>
     var url = "{{url()}}";
 </script>
