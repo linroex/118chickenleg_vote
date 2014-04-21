@@ -36,7 +36,7 @@ App::after(function($request, $response)
 Route::filter('auth', function()
 {
 	if(!User::is_login()){
-        return '請先登入才能進行投票、分享等功能。';
+        // return '請先登入才能進行投票、分享等功能。';
     }
 });
 

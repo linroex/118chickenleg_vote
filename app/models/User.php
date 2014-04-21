@@ -17,7 +17,7 @@ class User extends Eloquent{
         if(self::$facebook == null){
             self::construct();
         }
-        if(self::whereRaw('uid = ? and created_at = CURDATE()',array($user_id))->count() == 0){
+        if(self::whereRaw('uid = ? and DATE_FORMAT(created_at, "%Y-%m-%d") = ?',array($user_id, date('Y-m-d',time())))->count() == 0){
             return True;
         }else{
             return False;
@@ -38,6 +38,7 @@ class User extends Eloquent{
             self::construct();
         }
         return self::$facebook->getUser();
+        
     }
     public static function get_login_url(){
         if(self::$facebook == null){

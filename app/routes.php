@@ -22,7 +22,3 @@ Route::get('/about', function()
 {
     return View::make('about');
 });
-Route::get('/test', function()
-{
-    return User::credentials('100001271818927');
-});
