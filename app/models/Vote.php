@@ -5,7 +5,7 @@ class Vote extends Eloquent{
     public $primaryKey = 'uid';
 
     public static function has_voted($user_id, $contestant_id){
-        if(self::whereRaw('uid = ? and contestant_id = ?',array($user_id, $contestant_id))->count() == 0){
+        if(self::whereRaw('uid = ? and contestant_id = ? and created_at = CURDATE()',array($user_id, $contestant_id))->count() == 0){
             return False;
         }else{
             return True;
