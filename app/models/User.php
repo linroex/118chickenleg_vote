@@ -17,7 +17,7 @@ class User extends Eloquent{
         if(self::$facebook == null){
             self::construct();
         }
-        if(self::whererRaw('uid = ? and created_at = CURDATE()',array($user_id))->count() == 0){
+        if(self::whereRaw('uid = ? and created_at = CURDATE()',array($user_id))->count() == 0){
             return True;
         }else{
             return False;
