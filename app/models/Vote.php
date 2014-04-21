@@ -26,7 +26,7 @@ class Vote extends Eloquent{
     }
     public static function remove($user_id, $contestant_id){
         if(self::has_voted($user_id, $contestant_id)){
-            self::whereRaw('user_id = ? and contestant_id = ? and DATE_FORMAT(created_at, "%Y-%m-%d") = ?',array($user_id, $contestant_id, date('Y-m-d',time())))->delete();
+            self::whereRaw('uid = ? and contestant_id = ? and DATE_FORMAT(created_at, "%Y-%m-%d") = ?',array($user_id, $contestant_id, date('Y-m-d',time())))->delete();
             
             Contestant::decrease_votenum($contestant_id);
             return True;
