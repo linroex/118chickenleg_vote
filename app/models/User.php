@@ -1,7 +1,7 @@
 <?php
 class User extends Eloquent{
     protected $table = 'vote_history';
-    protected $guarded = array('created_at','updated_at','id');
+    protected $guarded = array('updated_at','id');
     public $primaryKey = 'id';
     
     private static $facebook = null;
