@@ -65,7 +65,7 @@ class User extends Eloquent{
             self::construct();
         }
         try {
-            return self::where('uid','=',self::getUserId())->first()->contestant_id;
+            return self::whereRaw('uid = ? and created_at = CURDATE()',array(self::getUserId()))->first()->contestant_id;
         } catch (Exception $e) {
             return False;            
         }
